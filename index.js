@@ -27,16 +27,9 @@ function createProxyRoute() {
   });
 }
 
-function corsOptionsDelegate(req, callback) {
-  var corsOptions;
-  if (whitelist.indexOf(req.header('Origin')) !== -1) {
-    corsOptions = {
-      origin: true
-    }; // reflect (enable) the requested origin in the CORS response
-  } else {
-    corsOptions = {
-      origin: false
-    }; // disable CORS for this request
-  }
-  callback(null, corsOptions); // callback expects two parameters: error and options
+function corsOptionsDelegate(req, cb) {
+  var allow = whitelist.indexOf(req.header('Origin')) >= 0;
+  console.error('Registry access request for %s: %s',
+                req.header('Origin'), allow ? 'Allow' : 'Deny');
+  cb(null, { origin: allow });
 }

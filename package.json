@@ -4,7 +4,7 @@
   "description": "CORS enabled npm registry proxy",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js >out.log 2>err.log"
   },
   "keywords": [
     "cors",

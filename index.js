@@ -5,8 +5,7 @@ var port = process.env.PORT || 3000;
 var whitelist = [
   'http://127.0.0.1:31337',
   'http://0.0.0.0:31337',
-  'http://npm.anvaka.com',
-  'http://www.yasiv.com'
+  'http://npmdocs.github.io'
 ];
 
 // Where to proxy requests:

@@ -9,7 +9,7 @@ var whitelist = [
 ];
 
 // Where to proxy requests:
-var endpoint = 'https://skimdb.npmjs.com';
+var endpoint = 'https://registry.npmjs.com';
 
 var express = require('express');
 var cors = require('cors');
